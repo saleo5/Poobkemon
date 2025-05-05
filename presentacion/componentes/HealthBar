@@ -1,0 +1,55 @@
+package presentacion.componentes;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class HealthBar extends JPanel {
+    private int currentHealth;
+    private int maxHealth;
+
+    public HealthBar(int maxHealth) {
+        this.maxHealth = maxHealth;
+        this.currentHealth = maxHealth;
+        setPreferredSize(new Dimension(200, 20));
+    }
+
+    public void setHealth(int health) {
+        this.currentHealth = Math.max(0, Math.min(health, maxHealth));
+        repaint();
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        int width = getWidth();
+        int height = getHeight();
+        int healthWidth = (int) ((double) currentHealth / maxHealth * width);
+
+        // Fondo
+        g.setColor(Color.LIGHT_GRAY);
+        g.fillRect(0, 0, width, height);
+
+        // Barra de vida
+        if ((double) currentHealth / maxHealth > 0.5) {
+            g.setColor(Color.GREEN);
+        } else if ((double) currentHealth / maxHealth > 0.2) {
+            g.setColor(Color.YELLOW);
+        } else {
+            g.setColor(Color.RED);
+        }
+        g.fillRect(0, 0, healthWidth, height);
+
+        // Borde
+        g.setColor(Color.BLACK);
+        g.drawRect(0, 0, width - 1, height - 1);
+
+        // Texto
+        g.setColor(Color.BLACK);
+        String text = currentHealth + "/" + maxHealth;
+        FontMetrics fm = g.getFontMetrics();
+        int x = (width - fm.stringWidth(text)) / 2;
+        int y = (height - fm.getHeight()) / 2 + fm.getAscent();
+        g.drawString(text, x, y);
+    }
+}
