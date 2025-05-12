@@ -47,7 +47,7 @@ public class MainWindow extends JFrame {
     }
 
     public void mostrarSeleccionPokemon(ModoJuego modoJuego, boolean esJugador1) {
-        this.modoJuego = modoJuego; 
+        this.modoJuego = modoJuego;
         getContentPane().removeAll();
         seleccionPokemonPanel = new SeleccionPokemonPanel(this, modoJuego, esJugador1);
         add(seleccionPokemonPanel);
