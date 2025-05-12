@@ -80,7 +80,7 @@ POOBkemon/
 
 ## Ejecución
 
-Cuando el proyecto esté correctamente compilado, podrás ejecutar el juego en la interfaz gráfica, la cual incluye:
+Cuando el proyecto esté correctamente compilado, podrás ejecutar el juego en la interfaz gráficam, que esta como una clase llamada MainWindow, la cual incluye:
 
 - **Selección de Pokémon**: El jugador elige un Pokémon para luchar.
 - **Opciones de batalla**: El jugador puede atacar, cambiar de Pokémon, usar un ítem o huir.
@@ -92,30 +92,6 @@ Cuando el proyecto esté correctamente compilado, podrás ejecutar el juego en l
 2. **Panel central**: Muestra el log de la batalla, donde se muestran los turnos y las acciones realizadas.
 3. **Panel inferior**: Presenta las opciones de acción: Atacar, Cambiar Pokémon, Usar un ítem o Huir.
 
-## Personalización
-
-### Agregar nuevos Pokémon
-
-Si deseas agregar más Pokémon al juego, sigue estos pasos:
-
-1. **Crear las imágenes**: Asegúrate de que las imágenes del Pokémon estén en el directorio `resources/pokemons/`. Las imágenes deben llamarse `nombrepokemon.png`, donde `nombrepokemon` es el nombre del Pokémon en minúsculas (por ejemplo, `charizard.png`).
-2. **Agregar datos del Pokémon**: En la clase `dominio.pokemon.Pokemon`, puedes agregar un nuevo Pokémon con sus estadísticas (PS, ataque, defensa, etc.).
-3. **Configuración de movimientos**: Los movimientos de los Pokémon también se deben definir en la clase `dominio.pokemon.Movimiento`.
-
-### Agregar nuevos ítems
-
-Los ítems también se pueden agregar de manera similar:
-
-1. **Crear las imágenes**: Las imágenes de los ítems deben ser colocadas en el directorio `resources/items/`.
-2. **Definir el ítem**: Puedes definir nuevos ítems en la clase `dominio.items.Item`, asegurándote de darles un nombre, una descripción y los efectos adecuados.
-
-## Contribuciones
-
-¡Si deseas contribuir al proyecto, no dudes en hacer un fork y enviar un pull request! Asegúrate de seguir las mejores prácticas de codificación y mantener la coherencia con el estilo de diseño del proyecto.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ## Autor
 
